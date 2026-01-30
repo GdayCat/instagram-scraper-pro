@@ -1,0 +1,86 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Instagram Scraper Pro",
+    "description": "Professional-grade Instagram data extraction. Fetch profiles, post feeds, and reels engagement without complex setup.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://instagram-scraper-pro.onrender.com",
+      "description": "Production server (Placeholder)"
+    }
+  ],
+  "paths": {
+    "/v1/profile/{username}": {
+      "get": {
+        "summary": "Get Profile Data",
+        "description": "Extracts bio, follower count, following count, and post count for a given username.",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "required": true,
+            "description": "The Instagram username",
+            "schema": {
+              "type": "string",
+              "example": "instagram"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/posts/{username}": {
+      "get": {
+        "summary": "Get Recent Posts",
+        "description": "Fetches a list of the most recent 12 posts from a user's profile.",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "required": true,
+            "description": "The Instagram username",
+            "schema": {
+              "type": "string",
+              "example": "cristiano"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "summary": "Health Check",
+        "responses": {
+          "200": {
+            "description": "System Online"
+          }
+        }
+      }
+    }
+  }
+}
