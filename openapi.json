@@ -8,7 +8,7 @@
   "servers": [
     {
       "url": "https://instagram-scraper-pro.onrender.com",
-      "description": "Production server (Placeholder)"
+      "description": "Production server"
     }
   ],
   "paths": {
